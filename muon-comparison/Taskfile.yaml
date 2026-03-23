@@ -1,0 +1,25 @@
+version: 3
+
+tasks:
+  run:
+    desc: Run the main file
+    silent: true
+    dir: src
+    env:
+      PYTHONPATH: .
+    cmds:
+      - uv run main.py
+
+  run.watch:
+    desc: Run and watch for changes (requires watchexec)
+    dir: src
+    cmds:
+      - watchexec --exts py task run
+
+  check-format:
+    desc: Perform static checks and run formatter
+    dir: src
+    cmds:
+      - uv run ty check
+      - uv run ruff check
+      - uv run ruff format
