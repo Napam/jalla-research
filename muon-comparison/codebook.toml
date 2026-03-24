@@ -1,0 +1,15 @@
+words = [
+    "argmin",
+    "backprop",
+    "ewton",
+    "momentums",
+    "naphat",
+    "oment",
+    "orthogonalization",
+    "orthogonalize",
+    "rthogonalized",
+    "svd",
+]
+ignore_paths = [
+    "**/*.py",
+]

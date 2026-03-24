@@ -23,3 +23,19 @@ tasks:
       - uv run ty check
       - uv run ruff check
       - uv run ruff format
+
+  typst-compile:
+    desc: Compile the presentation
+    cmds:
+      - typst compile presentation/main.typ
+
+  typst-watch:
+    desc: Watch and recompile presentation on changes
+    cmds:
+      - typst watch presentation/main.typ
+
+  typst-check:
+    desc: Check that the presentation compiles without errors
+    silent: true
+    cmds:
+      - typst compile -f pdf presentation/main.typ /dev/null

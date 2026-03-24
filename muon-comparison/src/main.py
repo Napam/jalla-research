@@ -17,7 +17,7 @@ def main() -> None:
     fmnist = torchvision.datasets.FashionMNIST("../data", download=True, transform=torchvision.transforms.ToTensor())
     n_classes = len(fmnist.classes)
 
-    ds_train, ds_val = torch.utils.data.random_split(fmnist, [0.6, 0.4])
+    ds_train, ds_val = torch.utils.data.random_split(fmnist, [0.8, 0.2])
 
     print(f"Train: {len(ds_train)} samples, Val: {len(ds_val)} samples")
 
@@ -54,10 +54,12 @@ def main() -> None:
             ),
         ],
         ds=ds_train,
+        val_ds=ds_val,
         batch_size=16,
         device=device,
-        epochs=2,
+        epochs=1,
         y_lim=(0, 2.5),
+        classes=fmnist.classes,
     )
 
 
