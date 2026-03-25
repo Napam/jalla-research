@@ -24,6 +24,8 @@
 
 #let accent-color = rgb(94.5%, 69.4%, 34.5%)
 
+#show link: underline
+
 #show heading: content => {
   set text(fill: accent-color)
   content
@@ -266,3 +268,29 @@ GPUs.
   implementation
 ]
 
+#pagebreak()
+
+Practical limitations of Muon:
+
+- Only works for 2D matrices, so it is only applied to the weight matrices in
+  the model, not the bias or other parameters.
+
+From the author:
+
+#quote(block: true, attribution: "Keller Jordan")[
+  #set text(size: 14pt)
+  - Will Muon scale to larger trainings? (e.g., 20B+ parameters for 1T+ tokens)
+  - Will it be possible to properly distribute the Newton-Schulz iterations used
+    by Muon across a large-scale GPU cluster?
+  - Is it possible that Muon works only for pretraining, and won’t work for
+    finetuning or reinforcement learning workloads?
+
+  At the time of writing, I don’t know the answers to these questions.
+]
+
+See #link("https://kellerjordan.github.io/posts/muon/") for a more detailed
+writeup
+
+#pagebreak()
+
+Illustration. See code.

@@ -2,14 +2,15 @@ words = [
     "argmin",
     "backprop",
     "ewton",
+    "finetuning",
     "momentums",
     "naphat",
     "oment",
     "orthogonalization",
     "orthogonalize",
+    "pretraining",
     "rthogonalized",
+    "sgn",
     "svd",
 ]
-ignore_paths = [
-    "**/*.py",
-]
+ignore_paths = ["**/*.py"]
