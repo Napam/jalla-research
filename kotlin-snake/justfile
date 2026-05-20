@@ -1,0 +1,6 @@
+
+run:
+    ./gradlew -q run
+
+run-watch:
+    ./gradlew --continuous --quiet run
